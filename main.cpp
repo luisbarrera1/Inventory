@@ -4,6 +4,7 @@
 
 using namespace std;
 
+vector<string> listFromString(string input);
 
 int main()
 {
@@ -23,4 +24,27 @@ int main()
 
     return 0;
 }
+   vector<string> listFromString(string input)
+{
+        vector<string> list;
+        
+        string word;
+    for( int i=0; i < input.size(); i++ )
+    {
+            if( input[i] != ',')
+            {
+
+                word.append(1, input[i]);
+                
+            }
+            else
+            {
+                list.push_back(word);
+                        word="";
+            }
            
+    }
+   
+    list.push_back(word);
+    return list;
+}
